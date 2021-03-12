@@ -68,7 +68,7 @@ function motion() {
     if (this.readyState == 4 && this.status == 200) {
     console.log(parseFloat(this.responseText));
       valueTest_2=this.responseText;}};
-  xhttp.open('GET', '/humidity', true);
+  xhttp.open('GET', '/motion', true);
   xhttp.send();
   return valueTest_2;
 };
