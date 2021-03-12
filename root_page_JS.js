@@ -17,6 +17,7 @@ function myFunction(ip) {
   xhttp.send();
 }
 
+
 setInterval(function ( ) {
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
@@ -28,16 +29,21 @@ setInterval(function ( ) {
   xhttp.send();
 }, 10000 ) ;
 
+
+
 setInterval(function ( ) {
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
-      document.getElementById("humidity").innerHTML = this.responseText;
+      document.getElementById("gas").innerHTML = this.responseText;
+        console_log(this.responseText);
     }
   };
-  xhttp.open("GET", "/humidity", true);
+  xhttp.open("GET", "/gas", true);
   xhttp.send();
 }, 10000 ) ;
+
+
 
 setInterval(function ( ) {
   var xhttp = new XMLHttpRequest();
