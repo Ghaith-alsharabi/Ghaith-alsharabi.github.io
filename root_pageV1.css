@@ -1,0 +1,193 @@
+<!DOCTYPE HTML><html>
+
+<!-- https://fontawesome.com/icons/gas-pump -->
+<head>
+<meta charset='utf-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <link href='css/material-icons.min.css' rel='stylesheet'>
+  <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css'>
+  <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
+  <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js'></script>
+
+  
+  
+<script src='https://code.iconify.design/1/1.0.7/iconify.min.js'></script>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.2/css/all.css' integrity='sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr' crossorigin='anonymous'>
+
+
+<!--<link rel='stylesheet' type='text/css' href='https://Ghaith-alsharabi.github.io/root_page.css'>-->
+
+</head>
+<style>
+    html {
+     font-family: Arial;
+     display: inline-block;
+     margin: 0px auto;
+     text-align: center;
+    }
+    h2 { font-size: 8.0rem; }
+    p { font-size: 6.0rem; }
+    .units { font-size: 2.0rem; }
+    .dht-labels{
+      font-size: 3.5rem;
+      vertical-align:middle;
+      padding-bottom: 15px;
+    }
+	
+	
+
+.buttonHolder{
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+		.button{
+			background-image: -webkit-linear-gradient(top, #f4f1ee, #fff);
+			background-image: linear-gradient(top, #f4f1ee, #fff);
+			border-radius: 60%;
+			box-shadow: 0px 8px 10px 0px rgba(0, 0, 0, 3), inset 0px 4px 1px 1px white, inset 0px -3px 1px 1px rgba(204,198,197,.5);
+			float:left;
+			height: 120px;
+			margin: 0 35px 35px 0;
+			position: relative;
+			width: 120px;			
+			-webkit-transition: all .1s linear;
+			transition: all .1s linear;
+		}
+
+		.button:after{
+			color:#e9e6e4;
+			content: "";
+			display: block;
+			font-size: 70px;
+			height: 65px;
+			text-decoration: none;
+			text-shadow: 0px -4px 6px #bdb5b4, 1px 1px 1px white;
+			position: absolute;
+			width: 70px;
+		}
+
+
+		.flower:after{
+			content: "✿";
+			left: 27px;
+			top: 11px;
+		}
+
+
+
+		.flower:hover:after{
+			color:#83d244;
+			text-shadow:0px 0px 6px #83d244;
+		}
+
+
+		.button:active{
+			background-image: -webkit-linear-gradient(top, #efedec, #f7f4f4);
+			background-image: linear-gradient(top, #efedec, #f7f4f4);
+			box-shadow: 0 3px 60px 0 rgba(0,0,0,.4), inset 0px -3px 1px 1px rgba(204,198,197,.5);
+		}
+
+		.button:active:after{
+			color:#dbd2d2;
+			text-shadow: 0px -1px 1px #bdb5b4, 0px 1px 1px white;
+		}
+		
+		
+		#middlebox{ 
+                float:left;  
+                background:Green; 
+                width:50%; 
+                height:280px; 
+            } 
+		#rightbox{ 
+                float:right; 
+                background:blue; 
+                width:25%; 
+                height:280px; 
+            } 
+</style>
+<body>
+
+<nav class='navbar navbar-inverse'>
+  <div class='container-fluid'>
+    <div class='navbar-header'>
+      <button type='button' class='navbar-toggle' data-toggle='collapse' data-target='#myNavbar'>
+        <span class='icon-bar'></span>
+        <span class='icon-bar'></span>
+        <span class='icon-bar'></span>                        
+      </button>
+      <a class='navbar-brand' href='/'>Home</a>
+    </div>
+    <div class='collapse navbar-collapse' id='myNavbar'>
+      <ul class='nav navbar-nav'>
+	            
+		<li><a href='/dashboard'>Dashboard</a></li>
+        <!--<li class='active'><a href='#'>Control Panel</a></li>-->
+	   <li><a href='/irRemote'>IR Remote</a></li>
+	   	<li><a href='/controlpanel'>Control Panel</a></li>
+
+      </ul>
+      <ul class='nav navbar-nav navbar-right'>
+
+        <li><a href='/login?DISCONNECT=YES'><span class='glyphicon glyphicon-log-in'></span> Log Out</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+  
+  
+  <h2>My Home</h2>
+<br>
+  <p>
+    <i class='fas fa-thermometer-half' style='color:#059e8a;'></i> 
+    <span class='dht-labels'>Temperature</span> 
+    <span id='temperature' style='font-size:10mm' >0</span>
+    <sup class='units'>&deg;C</sup>
+  </p>
+  
+    
+  <br>
+  <p>
+    <i class='fas fa-tint' style='color:#00add6;'></i> 
+    <span class='dht-labels'>Humidity</span>
+    <span id='humidity' style='font-size:10mm' >0</span>
+    <sup class='units'>%</sup>
+  </p>
+
+
+<br>
+ <p>
+  <i class='fas fa-skull-crossbones'></i>
+
+    <span class='dht-labels'>Gas leak</span>
+    <span id='gas' style='font-size:10mm'>0</span>
+    <sup class='units'>%</sup>
+  </p>
+  <br>
+  
+  <p>
+	<span class='iconify' data-icon='mdi-motion-sensor' data-inline='false'></span>
+    <span class='dht-labels'>Motion </span>
+    <span id='motion' style='font-size:10mm'>&ensp;0</span> 
+
+  </p><br><br><br><br>
+
+  
+
+
+  
+<span class='dht-labels'>&ensp;Air Wick</span>
+ <div class='buttonHolder'>
+  &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;<a  class='button flower'></a>
+</div>
+
+  
+</body>
+
+<script src='https://Ghaith-alsharabi.github.io/root_page_JS.js'></script>
+</html>
